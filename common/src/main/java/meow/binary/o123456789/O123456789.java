@@ -9,12 +9,11 @@ import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import org.joml.Matrix4f;
-import org.spongepowered.asm.mixin.Unique;
 
 public final class O123456789 {
     public static final String MOD_ID = "o123456789";
-    public static final ResourceLocation FONT = ResourceLocation.fromNamespaceAndPath(O123456789.MOD_ID, "3x5");
-    public static final ResourceLocation FONT_TINY = ResourceLocation.fromNamespaceAndPath(O123456789.MOD_ID, "3x5_tiny");
+    public static final ResourceLocation FONT = ResourceLocation.tryBuild(O123456789.MOD_ID, "3x5_tiny");
+    public static final ResourceLocation FONT_TINY = ResourceLocation.tryBuild(O123456789.MOD_ID, "3x5_tiny");
 
     public static void init() {
         // Write common init code here.

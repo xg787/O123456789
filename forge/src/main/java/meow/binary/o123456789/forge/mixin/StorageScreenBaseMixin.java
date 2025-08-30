@@ -1,6 +1,5 @@
-package meow.binary.o123456789.neoforge.mixin;
+package meow.binary.o123456789.forge.mixin;
 
-import com.llamalad7.mixinextras.sugar.Local;
 import com.mojang.blaze3d.vertex.PoseStack;
 import meow.binary.o123456789.O123456789;
 import net.minecraft.client.Minecraft;
@@ -16,7 +15,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(StorageScreenBase.class)
 public class StorageScreenBaseMixin {
-    @Inject(method = "renderStackCount", at = @At("HEAD"), cancellable = true, require = 0)
+    @Inject(method = "renderStackCount", at = @At("HEAD"), cancellable = true, require = 0, remap = false)
     private void redirected(GuiGraphics guiGraphics, String count, int x, int y, CallbackInfo ci) {
         Component component = Component.literal(count).withStyle(Style.EMPTY.withFont(O123456789.FONT));
         PoseStack poseStack = guiGraphics.pose();
